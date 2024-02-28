@@ -6,19 +6,19 @@ RUN apt update && apt -y upgrade && apt install -y \
     gcc
 
 RUN pip install --upgrade pip && pip install \
-    openai \
-    langchain \
-    langchain-openai \
+    openai==1.12.0 \
+    langchain==0.1.9 \
+    langchain-openai==0.0.7 \
+    jupyterlab \
+    ipywidgets \
+    tqdm \
     requests \
-    streamlit \
     numpy \
     pandas \
     matplotlib \
     japanize-matplotlib \
     seaborn \
-    jupyterlab \
-    tqdm \
-    ipywidgets
+    streamlit
 
 EXPOSE 8888
 

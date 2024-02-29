@@ -3,12 +3,16 @@ FROM python:3.12.1-slim-bullseye
 WORKDIR /app
 
 RUN apt update && apt -y upgrade && apt install -y \
-    gcc
+    gcc \
+    build-essential \
+    git \
+    sqlite3
 
 RUN pip install --upgrade pip && pip install \
     openai==1.12.0 \
     langchain==0.1.9 \
     langchain-openai==0.0.7 \
+    chromadb==0.3.29 \
     jupyterlab \
     ipywidgets \
     tqdm \
@@ -22,5 +26,4 @@ RUN pip install --upgrade pip && pip install \
 
 EXPOSE 8888
 
-COPY . /app
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--LabApp.token=''"]

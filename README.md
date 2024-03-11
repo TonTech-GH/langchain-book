@@ -16,6 +16,7 @@
     openai==1.12.0 \
     langchain==0.1.9 \
     langchain-openai==0.0.7 \
+    langchain-experimental==0.0.53 \
     chromadb==0.3.29 \
     GitPython
 
